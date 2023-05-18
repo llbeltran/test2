@@ -4,8 +4,11 @@ spring:
   cloud:    config:
       server:
         git:
-          default-label: zipkin-sleuth
-          uri: https://github.com/ChristianRaulRamirez/microservicios-tutorial
+          default-label: main2
+          username: llbeltran
+          password: MYmn2020
+          uri: https://github.com/llbeltran/test2
           search-paths: config-data
+          ignore-local-ssh-settings: true
   application:
     name: config-service
