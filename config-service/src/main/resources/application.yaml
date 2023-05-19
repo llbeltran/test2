@@ -2,7 +2,6 @@ server:
   port: 8081
 spring:
   cloud:    config:
-    
       server:
         git:
           default-label: main2
