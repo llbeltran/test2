@@ -16,19 +16,35 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: seguridad-service
+          uri: lb://seguridad-service
+          predicates:
+            - Path=/auth/**
+
         - id: usuario-service
           uri: lb://usuario-service
           predicates:
             - Path=/usuario/**
+          filters:
+            - AuthenticationFilter            
+
         - id: carro-service
           uri: lb://carro-service
           predicates:
             - Path=/carro/**
+          filters:
+            - AuthenticationFilter
+           
         - id: moto-service
           uri: lb://moto-service
           predicates:
             - Path=/moto/**
+          filters:
+            - AuthenticationFilter
+
         - id: bicicleta-service
           uri: lb://bicicleta-service
           predicates:
-            - Path=/bicicleta/**            
+            - Path=/bicicleta/**
+          filters:
+            - AuthenticationFilter
